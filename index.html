@@ -28,7 +28,10 @@
             </a>                
           </div>
           <span class="logout-spn" >
-            <a href="#" style="color:#fff;">LOGOUT</a>  
+            <h4>
+              Bienvenido Juanito
+              <a href="#" style="color:#CCC;">Cerrar</a>  
+            </h4>
           </span>
         </div>
       </div>
@@ -37,29 +40,20 @@
         <div class="sidebar-collapse">
           <ul class="nav" id="main-menu">               
             <li class="active-link">
-              <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+              <a href="index.html" ><i class="fa fa-users"></i>Usuarios</a>
             </li>
             <li>
-              <a href="ui.html"><i class="fa fa-table "></i>UI Elements  <span class="badge">Included</span></a>
+              <a href="ui.html"><i class="fa fa-arrow-right "></i>Ventas</a>
             </li>
             <li>
-              <a href="blank.html"><i class="fa fa-edit "></i>Blank Page  <span class="badge">Included</span></a>
+              <a href="blank.html"><i class="fa fa-arrow-left "></i>Compras</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-qrcode "></i>My Link One</a>
+              <a href="#"><i class="fa fa-clipboard"></i>Productos</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-bar-chart-o"></i>My Link Two</a>
+              <a href="vista/menus/mantenciones.php" class="ir_a"><i class="fa fa-cogs"></i>Mantenciones</a>
             </li>
-            <li>
-              <a href="#"><i class="fa fa-edit "></i>My Link Three </a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-table "></i>My Link Four</a>
-            </li>
-             <li>
-              <a href="#"><i class="fa fa-edit "></i>My Link Five </a>
-            </li>  
           </ul>
         </div>
       </nav>
@@ -83,6 +77,15 @@
       <!-- CUSTOM SCRIPTS -->
       <script src="assets/js/custom.js"></script>
       <!-- SCRIPTS PROPIOS -->
-      <script src="js/inicio/inicio.js"></script>
+      <script>
+        $(document).ready(function(){
+          $("#page-wrapper").load('vista/menus/inicio.php');
+
+          $(".ir_a").click(function(event){
+            event.preventDefault();
+            $("#page-wrapper").load($(this).attr('href'));
+          });
+        });
+      </script>
   </body>
 </html>
